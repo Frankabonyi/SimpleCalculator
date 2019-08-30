@@ -5,7 +5,6 @@
 }
 
 body {
-    color: #555;
     font-family: Open Sans;
     font-size:18px;
     height: 100vh;
@@ -17,30 +16,29 @@ body {
 .calc {
     box-sizing: border-box;
     margin: auto;
-    height: 350px;
-    width: 250px;
-    border: 20px solid rgb(127, 155, 148);
+    height: 420px;
+    width: 280px;
+    border: 15px solid  rgba(207, 204, 204, 0.8);
     border-radius: 10px;
-    background-color: rgba(127, 155, 148);
+    background-color: rgba(207, 204, 204, 0.6);
 }
 
 .display{
-    margin: auto;
-    height: 100px;
-    text-align: right;
+    height: 80px;
     color: black;
     font-weight: bold;
-    background-color:  rgba(245, 243, 243, 0.938);
-    border: 2px solid rgb(34, 33, 32);
-    border-radius: 10px;
-    margin-bottom: 10px;
+    background-color:  rgba(61, 58, 58, 0.5);
+    border: 0.5px solid rgb(34, 33, 32);
+    border-radius: 7px;
+    margin-bottom: 7px;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
     word-wrap: break-word;
-    word-break: break-all; 
+    word-break: break-all;
+    box-shadow: 0 10px 20px rgba(207, 204, 204, 0.5), 0 3px 3px rgba(0,0,0,3.23); 
     overflow: hidden;
   }
 
@@ -56,20 +54,71 @@ body {
 
 
   .keys {
+    height: 280px;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows:  repeat(4, 1fr); 
   }
 
-  .digit, .operator, .reset, .equal_to {
+  .digit, .operator, .delete {
+      height: 56px;
       background-color:  rgba(245, 243, 243, 0.938);
-      border-radius: 10px;
+      border-radius: 7px;
       text-align: center;
-      border: 1px solid rgb(34, 33, 32);
-      padding-top: 10px;
-      font-size: 25px;
+      border: 0.5px solid rgb(34, 33, 32);
+      padding-top: 25%;
+      font-size: 20px;
       font-weight: bold;
-      color: black;
+      color: rgb(0, 0, 0);
       margin: 2px;
+      box-shadow: 0 10px 20px rgba(207, 204, 204, 0.5), 0 3px 3px rgba(0,0,0,3.23);
+      cursor: pointer;
   }
+
+  .reset, .equal_to {
+    height: 56px;
+    background-color:  rgba(245, 243, 243, 0.938);
+    border-radius: 10px;
+    text-align: center;
+    border: 0.5px solid rgb(34, 33, 32);
+    padding-top: 12.5%;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin: 2px;
+    box-shadow: 0 10px 20px rgba(207, 204, 204, 0.5), 0 3px 3px rgba(0,0,0,3.23);
+    cursor: pointer;
+
+  }
+
+.reset {
+    grid-column: span 2;
+}
+
+.equal_to {
+    grid-column: span 2;
+}
+
+.operator:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(174, 243, 174);
+}
+ 
+.reset:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(212, 135, 135)
+}
+.delete:hover {
+    color: rgb(0, 0, 0);;
+    background: rgba(207, 204, 204, 0.3);
+}
+
+.digit:hover {
+    color: rgb(0, 0, 0);;
+    background: rgba(207, 204, 204, 0.3);
+}
+.equal_to:hover {
+    color: rgb(0, 0, 0);;
+    background: rgb(174, 243, 174);
+}

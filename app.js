@@ -4,17 +4,19 @@
         this.currentOperand = currentOperand
         this.reset()
      }
-
+     // clearing all the inputed values
      reset = () => {
          this.firstOperand = ''
          this.secondOperand = ''
          this.operator = null
      }
 
+     // deleting values from the last to the first
     delete =  () => {
-
+        this.firstOperand = this.firstOperand.toString().slice(0, -1)
     }
 
+    // Used to key in digits and decimal
     inputDigit = (digit) => {
         if (digit === '.' && this.firstOperand.includes('.')) return
         this.firstOperand = this.firstOperand.toString() + digit.toString()
@@ -22,76 +24,86 @@
 
     chooseOperators = (operator) => {
         if (this.firstOperand === '') return
-        if (this.firstOperand !== '') {
-            this.compute()
+        if (this.secondOperand !== '') {
+            this.calculate()
         }
         this.operator = operator
         this.secondOperand = this.firstOperand
         this.firstOperand = ''
     }
 
-    compute = () => {
-        let computation
-        const first = parseFloat(this.firstOperand)
+    // performs the simple arithmetic computations
+    calculate = () => {
+        let result
         const second = parseFloat(this.secondOperand)
+        const first = parseFloat(this.firstOperand)
         if (isNaN(first) || isNaN(second)) return
        switch (this.operator) {
            case '+':
-               computation = first + second
+               result = first + second
                break
             case '-':
-                computation =  second - first
+                result =  second - first
                 break
-            case '*':
-                computation = first * second
+            case '×':
+                result = first * second
                 break
-            case '/':
-                computation = first / second
+            case '÷':
+                result = second / first  
                 break
             default:
                 return
        } 
-        this.secondOperand = computation
-        this.operator = null
-        this.firstOperand = ''
+        this.firstOperand = result
+        this.operator = ''
+        this.secondOperand = ''
     }
 
+    // Displays input values and results on the screen
     updateDisplay =  () => {
         this.currentOperand.innerHTML = this.firstOperand;
-        this.previousOperand.innerHTML = this.secondOperand;
+        if (this.operator !== null) {
+            this.previousOperand.innerHTML = 
+            `${this.secondOperand} ${this.operator}`
+            return
+        }
+        this.operator = ''
+        this.secondOperand = ''
     }
 
 };
-
+ 
 const digitKeys = document.querySelector('.keys');
-const deleteKeys = document.querySelector('.delete');
-const display = document.querySelector('.display');
 const previousOperand = document.querySelector('.first-operand');
 const currentOperand = document.querySelector('.second-operand');
 
-const calculator = new Calculator(previousOperand, currentOperand)
+// Declaring the calculator object
+const calculator = new Calculator(previousOperand, currentOperand);
  
 digitKeys.addEventListener('click', (event) => {
     const { target } = event;
     const value = target.getAttribute('id');
+   
     if (target.classList.contains('digit')) {
-        console.log(value);
         calculator.inputDigit(value);
-       calculator.updateDisplay();
+        calculator.updateDisplay();
     }  
     if (target.classList.contains('operator')) {
-        console.log(value);
         calculator.chooseOperators(value);
         calculator.updateDisplay();
     }
     if (target.classList.contains('reset')) {
-        console.log(value);
         calculator.reset();
         calculator.updateDisplay();
     }
     if (target.classList.contains('equal_to')) {
-        console.log(value);
-        calculator.compute ();
+        calculator.calculate();
+        calculator.updateDisplay();
+    }
+    if (target.classList.contains('delete')) {
+        calculator.delete();
         calculator.updateDisplay();
     }
  })
+
+ console.log(calculator)
