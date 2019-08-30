@@ -22,7 +22,7 @@
         this.firstOperand = this.firstOperand.toString() + digit.toString();
     }
 
-    chooseOperators = (operator) => {
+    chooseOperators(operator) {
         if (this.firstOperand === '') return;
         if (this.secondOperand !== '') {
             this.calculate();
