@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #555;
+    font-family: Open Sans;
+    font-size:18px;
+    height: 100vh;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+}
+
+.calc {
+    box-sizing: border-box;
+    margin: auto;
+    height: 350px;
+    width: 250px;
+    border: 20px solid rgb(127, 155, 148);
+    border-radius: 10px;
+    background-color: rgba(127, 155, 148);
+}
+
+.display{
+    margin: auto;
+    height: 100px;
+    text-align: right;
+    color: black;
+    font-weight: bold;
+    background-color:  rgba(245, 243, 243, 0.938);
+    border: 2px solid rgb(34, 33, 32);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all; 
+    overflow: hidden;
+  }
+
+  .display .first-operand {
+      color: rgba(255, 255, 255,);
+      font-size: 16px;
+  }
+
+  .display .second-operand {
+    color: rgba(255, 255, 255, );
+    font-size: 30px;
+}
+
+
+  .keys {
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:  repeat(4, 1fr); 
+  }
+
+  .digit, .operator, .reset, .equal_to {
+      background-color:  rgba(245, 243, 243, 0.938);
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid rgb(34, 33, 32);
+      padding-top: 10px;
+      font-size: 25px;
+      font-weight: bold;
+      color: black;
+      margin: 2px;
+  }
