@@ -65,13 +65,12 @@ body {
       height: 56px;
       background-color:  rgba(245, 243, 243, 0.938);
       border-radius: 7px;
-      text-align: center;
       border: 0.5px solid rgb(34, 33, 32);
-      padding-top: 25%;
       font-size: 20px;
       font-weight: bold;
       color: rgb(0, 0, 0);
       margin: 2px;
+      outline: none;
       box-shadow: 0 10px 20px rgba(207, 204, 204, 0.5), 0 3px 3px rgba(0,0,0,3.23);
       cursor: pointer;
   }
@@ -80,13 +79,12 @@ body {
     height: 56px;
     background-color:  rgba(245, 243, 243, 0.938);
     border-radius: 10px;
-    text-align: center;
     border: 0.5px solid rgb(34, 33, 32);
-    padding-top: 12.5%;
     font-size: 20px;
     font-weight: bold;
     color: rgb(0, 0, 0);
     margin: 2px;
+    outline: none;
     box-shadow: 0 10px 20px rgba(207, 204, 204, 0.5), 0 3px 3px rgba(0,0,0,3.23);
     cursor: pointer;
 

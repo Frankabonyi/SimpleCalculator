@@ -38,7 +38,7 @@
         const second = parseFloat(this.secondOperand);
         const first = parseFloat(this.firstOperand);
         if (isNaN(first) || isNaN(second)) return
-       switch (this.operator) {
+        switch (this.operator) {
            case '+':
                result = first + second;
                break
@@ -71,7 +71,7 @@
         this.secondOperand = '';
     }
 
-};
+}
  
 const digitKeys = document.querySelector('.keys');
 const previousOperand = document.querySelector('.first-operand');
